@@ -32,8 +32,21 @@
 // Dichiariamo chi ha vinto.
 
 
+var listaPariODispari = ["pari","dispari"];
+
 let pariODispari = prompt("Scegli pari o dispari!");
+
+if (pariODispari !== "pari" && pariODispari !== "dispari") {
+    alert("Non hai inserito un valore tra pari o dispari, ora sceglierò io casualmente per te!");
+    pariODispari = listaPariODispari[Math.floor(Math.random()*listaPariODispari.length)];
+}
+
 let numeroScelto = parseInt(prompt("Scegli un numero da 1 a 5!"));
+
+if (numeroScelto > 5 || numeroScelto < 1 || isNaN(numeroScelto) === true) {
+    alert("Non hai inserito un numero tra 1 e 5, ora sceglierò io casualmente per te!");
+    numeroScelto = Math.floor(Math.random() * 5) + 1;;
+}
 
 function numeroCasuale () {
     let numeroCasualeComputer = Math.floor(Math.random() * 5) + 1;;
